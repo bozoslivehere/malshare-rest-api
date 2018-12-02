@@ -1,0 +1,56 @@
+name:                malshare-rest-api
+version:             0.1.0.0
+github:              "bozoslivehere/malshare-rest-api"
+license:             BSD3
+author:              "Gregory Newman"
+maintainer:          "gnewman@boomslang.mx"
+copyright:           "2018 Gregory Newman"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/githubuser/malshare-rest-api#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- aeson
+- lens-aeson
+- wreq
+- http-conduit
+- bytestring
+- bytestring-conversion
+- lens
+- hashmap
+
+library:
+  source-dirs: src
+
+executables:
+  malshare-rest-api-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - malshare-rest-api
+
+tests:
+  malshare-rest-api-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - malshare-rest-api
