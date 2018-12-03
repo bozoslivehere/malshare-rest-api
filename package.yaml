@@ -29,6 +29,7 @@ dependencies:
 - bytestring-conversion
 - lens
 - hashmap
+- text
 
 library:
   source-dirs: src
